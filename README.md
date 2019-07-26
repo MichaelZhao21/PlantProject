@@ -17,10 +17,10 @@
 
 - Built a basic Arduino system that uses the water level sensor as a simple switch and an input while the LED is on a separate circuit
 
-    | ![Sensor On](pics\sensor_on.jpg) | ![Sensor Off](pics\sensor_off.jpg) |
+    | ![Sensor On](pics/sensor_on.jpg) | ![Sensor Off](pics/sensor_off.jpg) |
     |-|-|
 
-    ![Diagram of Circuit](pics\sensor_diagram.jpg)
+    ![Diagram of Circuit](pics/sensor_diagram.jpg)
 
 ### Code
 
@@ -334,7 +334,7 @@ For future refrence (The ESP8266 NodeMCU Pinout diagram)
 - [Arduino PWM Tutorial](https://www.arduino.cc/en/Tutorial/PWM)
 - And so I set up a simple test that slowly increases in brightness over a period of about 2 sec (Using the analogWrite() function)
 
-![Analog Write Test](pics\analogWrite.jpg)
+![Analog Write Test](pics/analogWrite.jpg)
 
 ```arduino
 #define RED_LED 12
@@ -898,7 +898,7 @@ Today, there was a lot achieved in the direction of the server! I was able to cr
 
 ### Initialized the AWS EC2 Ubuntu Instance
 
-![AWS EC2 Instance](pics\aws_init.jpg)
+![AWS EC2 Instance](pics/aws_init.jpg)
 
 - [This is a great tutorial to set up a Node.js server](https://hackernoon.com/tutorial-creating-and-managing-a-node-js-server-on-aws-part-1-d67367ac5171)
 - [Get a file using SCP from SSH connection](https://stackoverflow.com/questions/9427553/how-to-download-a-file-from-server-using-ssh)
@@ -916,7 +916,7 @@ app.get('/', (req, res) => {
 app.listen(3000, () => console.log('Server running on port 3000'))
 ```
 
-![AWS Node Test](pics\aws_node_test.jpg)
+![AWS Node Test](pics/aws_node_test.jpg)
 
 ### The Valve System
 
@@ -939,7 +939,7 @@ Still don't know how I'm gonna make the water tank/box but that's okay for now
   - [How to Add Wires](https://knowledge.autodesk.com/support/inventor-products/learn-explore/caas/CloudHelp/cloudhelp/2019/ENU/Inventor-Help/files/GUID-880B91B4-8E64-451C-BE90-70EF8920E34C-htm.html)
   - [Water Bottle I'm using as a water tank](https://www.target.com/p/ozarka-brand-100-natural-spring-water-101-4-fl-oz-jug/-/A-13052112?ref=tgt_adv_XS000000&AFID=google_pla_df&fndsrc=tgtao&CPNG=PLA_Grocery%2BShopping_Local&adgroup=SC_Grocery&LID=700000001170770pgs&network=g&device=c&location=9026804&ds_rl=1246978&ds_rl=1247077&ds_rl=1246978&gclid=CjwKCAjwpuXpBRAAEiwAyRRPgcaBEBNUaWOALdpB5_KzNWNR7w6STYEUnB9ztlkRgO-Csq-IPxrQ6BoCGrkQAvD_BwE&gclsrc=aw.ds)
 
-![CAD Model](pics\cad_0.jpg)
+![CAD Model](pics/cad_0.jpg)
 
 ### Final Shopping List
 
