@@ -969,3 +969,32 @@ Amazon
 ![Updated CAD Model](pics/cad_1.jpg)
 
 **[Everything has been uploaded to GitHub!!!](https://github.com/MichaelZhao21/plantProject)**
+
+### Relay and Valve Test
+
+Valve works with a AC -> DC 12V adaptor!
+
+- Need to solder the wires to the valve
+- Also need to connect BATTERY power to it, instead of a wall plug
+- Also need to test the sealability of the connections and if it actually works with water
+
+Relay works!!!
+
+- Tested it with the Arduino
+- Just ran a simple Blink program
+- Can audibly hear the relay triggering
+- Still need to combine the 2 systems and test it
+
+```arduino
+void setup() {
+  pinMode(7, OUTPUT);
+}
+void loop() {
+  digitalWrite(7, HIGH);
+  delay(1000);
+  digitalWrite(7, LOW);
+  delay(1000);
+}
+```
+
+![Relay!](pics/relay.jpg)
