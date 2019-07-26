@@ -958,3 +958,14 @@ Amazon
 - [Stepdown Module 6-pack](https://www.amazon.com/MP1584EN-DC-DC-Converter-Adjustable-Module/dp/B01MQGMOKI/ref=pd_day0_hl_229_1/131-2783987-3110648?_encoding=UTF8&pd_rd_i=B01MQGMOKI&pd_rd_r=f974abb4-376c-4b13-a836-c41eaf9d17e1&pd_rd_w=fyi2h&pd_rd_wg=ntIxY&pf_rd_p=ad07871c-e646-4161-82c7-5ed0d4c85b07&pf_rd_r=E9VX1YDAXY6MDVG14SCS&psc=1&refRID=E9VX1YDAXY6MDVG14SCS)
 - [Battery Holder](https://www.amazon.com/SACKORANGE-Plastic-Battery-Storage-Holder/dp/B06XT1DM74/ref=sr_1_4?keywords=circuit+board+battery+holder&qid=1563806660&s=gateway&sr=8-4)
 - [Loctite Clear Silicone Waterproof Sealant 2.7-Ounce Tube](https://www.amazon.com/Loctite-Silicone-Waterproof-2-7-Ounce-908570/dp/B0002BBX3U)
+
+## 7/26/2019
+
+### More CAD
+
+- Added wires and cables >:( was very difficult
+- This should be the final design, except for the battery, which is going on the side
+
+![Updated CAD Model](pics/cad_1.jpg)
+
+**[Everything has been uploaded to GitHub!!!](https://github.com/MichaelZhao21/plantProject)**
