@@ -998,3 +998,71 @@ void loop() {
 ```
 
 ![Relay!](pics/relay.jpg)
+
+More Stuff to Buy:
+
+- [Twisted Bell Wire](https://www.homedepot.com/p/Southwire-By-the-Foot-20-2-Twisted-CU-Bell-Wire-56750099/204725217)
+
+## 7/27/2019
+
+### Connect the ESP8266 to the AWS Server through a WebSocket!
+
+- We are going to get the contents of my aws server and send it to the serial monitor
+- Also I'm going to use scp to send the html and js file to the server first
+- [Create a Node.js WebSocket](https://medium.com/@martin.sikora/node-js-websocket-simple-chat-tutorial-2def3a841b61)
+- [ESP8266 Client](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/client-examples.html)
+- Ughhhhh so update: I spent like an hour trying to figure out the issues with the ssh connection; it turns out that the WSL doesn't allow us to use `chmod` to change the permissions on the NTFS file system, so I had to move the plants.pem file to the /home drive and then change permissions to 400
+
+To copy the 3 files to the server, from the directory of the plants.pem file (Mine is /home):
+
+```bash
+scp -i plants.pem "/mnt/c/Users/micha/Documents/code/plantProject/server/app.js" "ubuntu@ec2-[instance number].compute-1.amazonaws.com:~/server"
+
+scp -i plants.pem -r "/mnt/c/Users/micha/Documents/code/plantProject/server/public" "ubuntu@ec2-[instance number].compute-1.amazonaws.com:~/server"
+```
+
+To actually connect using ssh:
+
+```bash
+ssh -i "plants.pem" ubuntu@ec2-[instance number].compute-1.amazonaws.com
+```
+
+## 7/29/2019
+
+- \>:( The WebSocket doesn't work
+- While testing it locally, with `localhost:3000`, it somehow works, but when I put it on the EC2 server, it doesn't work
+- [WS npm Package](https://github.com/websockets/ws#opt-in-for-performance-and-spec-compliance)
+
+### Ugh
+
+Okay so I'm going to not use a WebSocket because idk what is wrong and I don't really want to fix this issue, so I'm just going to try to use basic GET and POST requests tomorrow.
+
+[Creating a Node.js server, part 2](https://hackernoon.com/tutorial-creating-and-managing-a-node-js-server-on-aws-part-2-5fbdea95f8a1)
+
+## 7/30/2019
+
+### AHHHHHHHHHHHHHH
+
+Okay, so some issues with the ordered products:
+
+1. The battery holders are meant for 18650 batteries, NOT AA!!!!
+2. The tiny MP1584EN DC-DC Buck Converter apparently doesn't work with the ESP8266 Module
+3. I have no idea how to use the freaking soldering iron
+4. I'm scared of the Loctite
+5. I didn't order twisted bell wires, so I have to go look for some leftovers I have
+
+But I have some solutions!
+
+- Get this: [2 x 1.5V AA Battery Holder](https://www.amazon.com/WAYLLSHINE%C2%AE-Dozen-Battery-Holder-Black/dp/B013GNC08C/ref=pd_cp_23_3?pd_rd_w=Py469&pf_rd_p=ef4dc990-a9ca-4945-ae0b-f8d549198ed6&pf_rd_r=4XEPVZCXQM6N3VE72EH0&pd_rd_r=8922cdf3-4011-4bdc-a9b4-d019f06e5f3c&pd_rd_wg=IAFFK&pd_rd_i=B013GNC08C&refRID=4XEPVZCXQM6N3VE72EH0&th=1)
+- This product SHOULD provide the 3 volts needed to power the ESP8266, so I probably won't need the converter module
+- And I guess I'll read the instructions on the soldering iron and figure it out
+- As for the Loctite, I won't have to deal with that until I've gotten the actual box and stuff assembled!
+
+I think I'm gonna take a break and then come back to figure out the server stuff sighhhhhh
+
+### Web Server Stuff
+
+- Using this ([Node.js Tutorial pt.2](https://medium.com/hackernoon/tutorial-creating-and-managing-a-node-js-server-on-aws-part-2-5fbdea95f8a1#.mnlkymeti)) I was able to run the server on the default port with a pm2 dameon!
+- I also added jquery to make post requests to the server
+
+[Express.js Tutorial](https://www.tutorialspoint.com/expressjs/expressjs_environment.htm)
